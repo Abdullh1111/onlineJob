@@ -9,8 +9,8 @@ const userSchema = new Schema<TUser, TUserModel, TUserMethod>(
     name: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    role: { type: String, required: true, enum: ["user", "admin"] , default:'user'},
-    phoneNumber: { type: String, minlength: 11 },
+    role: { type: String,  enum: ["user", "admin"] , default:'user'},
+    balance:{type:Number, default:0}
   },
   {
     timestamps: true,

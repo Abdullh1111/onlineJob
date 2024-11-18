@@ -3,9 +3,9 @@ import { Model, Types } from "mongoose";
 export type TUser = {
   name: string;
   email: string;
-  phoneNumber: string;
   password: string;
-  role: string;
+  role: "user" | "admin";
+  balance: number;
   createdAt: Date;
   updatedAt: Date;
 };

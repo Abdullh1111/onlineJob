@@ -3,19 +3,19 @@ import globalErrorHandler from './ErrorHandler/glbalErrorHandler'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import userRouter from './module/users/user.router'
-import verificationRouter from './module/verificationEmail/verificationEmail.router'
+import formRoute from './module/form/form.route'
 const app = express()
 
 // middleware
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(cors({origin: "https://full-secure-login-and-registration-1.onrender.com", credentials: true}))
+app.use(cors({origin: "*", credentials: true}))
 app.use(cookieParser())
 
 // routes
 const url = '/api/v1'
 app.use(`${url}/user`,userRouter)
-app.use(`${url}/verification`,verificationRouter)
+app.use(`${url}/form`,formRoute)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

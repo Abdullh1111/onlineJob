@@ -1,53 +1,48 @@
-
 import catchAsync from "../../ErrorHandler/catcAsync";
 import userService from "./user.service";
 
-// registration
+const createUser = catchAsync(async (req, res) => {
+  const result = await userService.createUser(req.body);
+  res.status(201).json({
+    success: true,
+    message: "user created successfully",
+    data: result,
+  });
+});
 
-// login
 const login = catchAsync(async (req, res) => {
-    const result = await userService.login(req.body)
-    const token = result.token()
-    
-    res.status(201).cookie('token',token,{
-        httpOnly: true,
-        maxAge: 30 * 24 * 60 * 60 * 1000,
-        secure: true, 
-        sameSite: "none"
-    }).json({
-        success: true,
-        message: "User login successfully",
-        data: result
-    })
-})
+  const result = res.locals.user;
+  const token = result.token();
+  res.cookie("token", token, { httpOnly: true }).status(200).json({
+    success: true,
+    message: "login successfully",
+    data: result,
+  });
+});
 
-// logout
+const getUserData = catchAsync(async (req, res) => {
+  const result = res.locals.user;
+  res.status(200).json({
+    success: true,
+    message: "user data fetched successfully",
+    data: result,
+  });
+});
+
 const logout = catchAsync(async (req, res) => {
-    
-    res.status(201).cookie('token','',{
-        httpOnly: true,
-        secure:true,
-        sameSite: "none",
-        maxAge: 0
-    }).json({
-        success: true,
-        message: "User logout successfully",
-    })
-})
+  res.clearCookie("token").status(200).json({
+    success: true,
+    message: "logout successfully",
+  });
+});
 
+const allUser = catchAsync(async (req, res) => {
+  const result = await userService.allUser();
+  res.status(200).json({
+    success: true,
+    message: "all user fetched successfully",
+    data: result,
+  });
+});
 
-
-// get user data
-const userData = catchAsync(async (req, res) => {
-    
-    res.status(200).json({
-        success: true,
-        message: "Get user data successfully",
-        data: res.locals.user
-    })
-})
-export default {
-    login,
-    logout,
-    userData
-}
+export default { createUser , login, getUserData,logout, allUser };
