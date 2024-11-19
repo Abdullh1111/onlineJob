@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FormControl,  FormField,  FormItem, FormLabel, FormMessage } from "../ui/form";
 
-import { useForm } from "react-hook-form"
 import { Input } from "../ui/input";
 type formItems = {
     label:string,
+    name:string,
+    form:any
 }
 
-const FormItems = ({label}:formItems) => {
+const FormItems = ({label,name,form}:formItems) => {
     
-const form = useForm()
     return (
         <div>
         <FormField
           control={form.control}
-          name="username"
+          name={name}
           render={({ field }) => (
             <FormItem>
           <FormLabel>{label}</FormLabel>

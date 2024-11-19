@@ -12,6 +12,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { useRegisterUserMutation } from "@/redux/services/user"
 
 
 export function Register() {
@@ -25,9 +26,17 @@ const form = useForm({
     },
   })
 
+  const [submitData,{data,error,isLoading}] = useRegisterUserMutation()
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onsubmit = (datas: any) => {
+    submitData(datas)
+  }
+  
+  console.log(data,error)
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit((data) => console.log(data))} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onsubmit)} className="space-y-8">
         <FormField
           control={form.control}
           name="name"
@@ -35,7 +44,7 @@ const form = useForm({
             <FormItem>
               <FormLabel>Username</FormLabel>
               <FormControl>
-                <Input placeholder="Enter your name" {...field} />
+                <Input required placeholder="Enter your name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -49,7 +58,7 @@ const form = useForm({
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="Enter your email" {...field} />
+                <Input type="email" required placeholder="Enter your email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -63,13 +72,13 @@ const form = useForm({
             <FormItem>
               <FormLabel>password</FormLabel>
               <FormControl>
-                <Input type="password" placeholder="shadcn" {...field} />
+                <Input required type="password" placeholder="shadcn" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button disabled={isLoading} type="submit">Submit</Button>
       </form>
     </Form>
   )

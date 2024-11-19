@@ -13,11 +13,12 @@ import {
 import { items } from "@/lib/items"
 import { usePathname } from "next/navigation"
 
+
 // Menu items.
 
 export function AppSidebar() {
+  
     const pathName = usePathname()
-    console.log(pathName)
   return (
     <Sidebar>
       <SidebarContent>

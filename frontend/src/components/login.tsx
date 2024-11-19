@@ -12,7 +12,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { useGetUserMutation } from "@/redux/services/user"
+import { useLoginUserMutation } from "@/redux/services/user"
 
 
 export function Login() {
@@ -26,7 +26,7 @@ const form = useForm({
   })
 
   
-  const [submitData,{data,error}] = useGetUserMutation()
+  const [submitData,{data,error,isLoading}] = useLoginUserMutation()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onsubmit = (datas: any) => {
     submitData(datas)
@@ -64,7 +64,7 @@ const form = useForm({
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" disabled={isLoading}>Submit</Button>
       </form>
     </Form>
   )

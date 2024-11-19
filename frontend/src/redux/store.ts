@@ -1,15 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userSlice from "./features/userSlice";
 import { userApi } from "./services/user";
+import { formApi } from "./services/form";
 export const makeStore = () => {
   return configureStore({
     reducer: {
       user: userSlice,
 
       [userApi.reducerPath]: userApi.reducer,
+      [formApi.reducerPath]: formApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(userApi.middleware),
+      getDefaultMiddleware().concat(userApi.middleware, formApi.middleware),
   });
 };
 
