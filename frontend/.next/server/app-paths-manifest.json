@@ -1,7 +1,5 @@
 {
-  "/register/page": "app/register/page.js",
+  "/page": "app/page.js",
   "/login/page": "app/login/page.js",
-  "/main/(pages)/servertoid/page": "app/main/(pages)/servertoid/page.js",
-  "/main/(pages)/covid/page": "app/main/(pages)/covid/page.js",
-  "/main/(pages)/servercopytoid/page": "app/main/(pages)/servercopytoid/page.js"
+  "/main/(pages)/covid/page": "app/main/(pages)/covid/page.js"
 }

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { Noto_Sans_Bengali } from 'next/font/google';
+import StoreProvider from "@/redux/storeProvider";
 
 const notoSansBengali = Noto_Sans_Bengali({ subsets: ['bengali'] });
 
@@ -23,9 +24,11 @@ export default function RootLayout({
         className={notoSansBengali.className}
       >
       <main>
+        <StoreProvider>
         <div >
         {children}
         </div>
+        </StoreProvider>
       </main>
       </body>
     </html>
