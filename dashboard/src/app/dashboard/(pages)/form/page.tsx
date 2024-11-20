@@ -6,7 +6,6 @@ import React from 'react';
 
 const Page = () => {
   const {data} = useGetAllFormsQuery()
-  console.log(data?.data)
   let forms = []
 if(data){
    forms = data?.data

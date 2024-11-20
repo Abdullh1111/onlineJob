@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useLoginUserMutation } from "@/redux/services/user"
-
+import { redirect } from "next/navigation"
 
 export function Login() {
   
@@ -24,12 +24,14 @@ const form = useForm({
       password: "",
     },
   })
-  const [submitData,{data,error,isLoading}] = useLoginUserMutation()
+  const [submitData,{isLoading}] = useLoginUserMutation()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onsubmit = (datas: any) => {
     submitData(datas)
+    if(!isLoading){
+      redirect("/dashboard")
+    }
   }
-  console.log(data,error)
 
   return (
     <Form {...form}>

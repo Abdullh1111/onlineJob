@@ -1,45 +1,12 @@
+"use client"
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { useAllUserQuery } from '@/redux/services/user';
 import React from 'react';
 
-const page = () => {
+const Page = () => {
 
-     const users = [
-        {
-          name: "John Doe",
-          email: "johndoe@example.com",
-          password: "$2b$10$G5Rq8fV7fKPN.324hxrUY.pGcQT3jyswNGikzM7meAQnUF83Gb/Za",
-          role: "user",
-          balance: 0,
-        },
-        {
-          name: "Jane Smith",
-          email: "janesmith@example.com",
-          password: "$2b$10$G5Rq8fV7fKPN.324hxrUY.pGcQT3jyswNGikzM7meAQnUF83Gb/Za",
-          role: "user",
-          balance: 0,
-        },
-        {
-          name: "Alice Brown",
-          email: "alicebrown@example.com",
-          password: "$2b$10$G5Rq8fV7fKPN.324hxrUY.pGcQT3jyswNGikzM7meAQnUF83Gb/Za",
-          role: "user",
-          balance: 0,
-        },
-        {
-          name: "Bob Johnson",
-          email: "bobjohnson@example.com",
-          password: "$2b$10$G5Rq8fV7fKPN.324hxrUY.pGcQT3jyswNGikzM7meAQnUF83Gb/Za",
-          role: "user",
-          balance: 0,
-        },
-        {
-          name: "Charlie Davis",
-          email: "charliedavis@example.com",
-          password: "$2b$10$G5Rq8fV7fKPN.324hxrUY.pGcQT3jyswNGikzM7meAQnUF83Gb/Za",
-          role: "user",
-          balance: 0,
-        },
-      ];
+  const {data} = useAllUserQuery()
+     const users = data?.data
       
 
     return (
@@ -55,7 +22,7 @@ const page = () => {
     </TableRow>
   </TableHeader>
   <TableBody>
-    {users.map((user) => (
+    {users?.map((user) => (
         <TableRow key={user.email}>
             <TableCell className="w-[100px]">{user.name}</TableCell>
             <TableCell className='lg:flex hidden'>{user.email}</TableCell>
@@ -70,4 +37,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;

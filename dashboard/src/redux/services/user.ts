@@ -34,10 +34,17 @@ export const userApi = createApi({
         method: "GET",
       }),
     }),
+
+    allUser: builder.query<any, void>({
+      query: () => ({
+        url: "user/alluser",
+        method: "GET",
+      }),
+    }),
   
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useLoginUserMutation,  useGetUserQuery, useLazyLogoutUserQuery} = userApi;
+export const { useLoginUserMutation,  useGetUserQuery, useLazyLogoutUserQuery , useAllUserQuery } = userApi;
