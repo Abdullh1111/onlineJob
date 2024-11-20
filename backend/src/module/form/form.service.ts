@@ -17,6 +17,24 @@ const finishedReq = async () => {
     return result;
 }
 
+const getById = async (id:string) => {
+    
+    const result = await formRequest.findById(id);
+    return result;
+}
+
+const getAll = async () => {
+    
+    const result = await formRequest.find();
+    return result;
+}
+
+const update = async (data:TFormRequest) => {
+    
+    const result = await formRequest.findByIdAndUpdate(data.id,{data});
+    return result;
+}
 
 
-export default { submit , pendingReq , finishedReq }; 
+
+export default { submit , pendingReq , finishedReq, getById, getAll, update }; 
