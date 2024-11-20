@@ -1,11 +1,11 @@
 
-import { BirthCertificateForm } from '@/components/Forms/BirthCirtificate';
+import { redirect } from 'next/navigation';
 import React from 'react';
 
 const Home = () => {
+  redirect("/main")
   return (
     <div className='mx-auto'>
-      <BirthCertificateForm></BirthCertificateForm>
       
     </div>
   );

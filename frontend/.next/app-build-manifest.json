@@ -6,10 +6,15 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/page": [
+    "/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/login/page.js"
+    ],
+    "/register/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/register/page.js"
     ],
     "/main/layout": [
       "static/chunks/webpack.js",
@@ -21,95 +26,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/main/page.js"
     ],
-    "/main/(pages)/birthcertificate/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/birthcertificate/page.js"
-    ],
-    "/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/login/page.js"
-    ],
-    "/main/(pages)/servertoid/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/servertoid/page.js"
-    ],
-    "/main/(pages)/servercopytoid/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/servercopytoid/page.js"
-    ],
-    "/main/(pages)/servercopy/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/servercopy/page.js"
-    ],
-    "/main/(pages)/tincertificate/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/tincertificate/page.js"
-    ],
-    "/main/(pages)/birthcertificatemake/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/birthcertificatemake/page.js"
-    ],
-    "/main/(pages)/colonbirthcertificate/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/colonbirthcertificate/page.js"
-    ],
-    "/main/(pages)/calllist/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/calllist/page.js"
-    ],
-    "/main/(pages)/idtoallnumber/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/idtoallnumber/page.js"
-    ],
-    "/main/(pages)/livelocation/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/livelocation/page.js"
-    ],
-    "/main/(pages)/nagadinfo/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/nagadinfo/page.js"
-    ],
-    "/main/(pages)/bkashinfo/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/bkashinfo/page.js"
-    ],
-    "/main/(pages)/tincertificatezero/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/tincertificatezero/page.js"
-    ],
-    "/main/(pages)/idcard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/idcard/page.js"
-    ],
-    "/main/(pages)/allsimbio/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/allsimbio/page.js"
-    ],
-    "/main/(pages)/covid/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/covid/page.js"
-    ],
-    "/main/(pages)/numbertoid/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/main/(pages)/numbertoid/page.js"
+      "static/chunks/app/page.js"
     ]
   }
 }
