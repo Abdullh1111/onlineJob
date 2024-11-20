@@ -1,8 +1,21 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js",
   "/login/page": "app/login/page.js",
-  "/main/(pages)/birthcertificate/page": "app/main/(pages)/birthcertificate/page.js",
   "/main/page": "app/main/page.js",
-  "/main/(pages)/servertoid/page": "app/main/(pages)/servertoid/page.js"
+  "/main/(pages)/birthcertificate/page": "app/main/(pages)/birthcertificate/page.js",
+  "/main/(pages)/servertoid/page": "app/main/(pages)/servertoid/page.js",
+  "/main/(pages)/servercopytoid/page": "app/main/(pages)/servercopytoid/page.js",
+  "/main/(pages)/servercopy/page": "app/main/(pages)/servercopy/page.js",
+  "/main/(pages)/tincertificate/page": "app/main/(pages)/tincertificate/page.js",
+  "/main/(pages)/birthcertificatemake/page": "app/main/(pages)/birthcertificatemake/page.js",
+  "/main/(pages)/colonbirthcertificate/page": "app/main/(pages)/colonbirthcertificate/page.js",
+  "/main/(pages)/calllist/page": "app/main/(pages)/calllist/page.js",
+  "/main/(pages)/idtoallnumber/page": "app/main/(pages)/idtoallnumber/page.js",
+  "/main/(pages)/livelocation/page": "app/main/(pages)/livelocation/page.js",
+  "/main/(pages)/nagadinfo/page": "app/main/(pages)/nagadinfo/page.js",
+  "/main/(pages)/bkashinfo/page": "app/main/(pages)/bkashinfo/page.js",
+  "/main/(pages)/tincertificatezero/page": "app/main/(pages)/tincertificatezero/page.js",
+  "/main/(pages)/idcard/page": "app/main/(pages)/idcard/page.js",
+  "/main/(pages)/allsimbio/page": "app/main/(pages)/allsimbio/page.js",
+  "/main/(pages)/covid/page": "app/main/(pages)/covid/page.js",
+  "/main/(pages)/numbertoid/page": "app/main/(pages)/numbertoid/page.js"
 }
