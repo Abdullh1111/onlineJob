@@ -8,7 +8,7 @@ const page = () => {
             <p className="bg-primaryColour text-white  2xl:w-[80vw] xl:w-[75vw] md:w-[55vw] w-[80vw] text-center py-3 rounded-lg">
             জন্ম নিবন্ধন মেক
       </p>
-            <BirthCertificateForm></BirthCertificateForm>
+            <BirthCertificateForm name='জন্ম নিবন্ধন মেক'></BirthCertificateForm>
         </div>
     );
 };

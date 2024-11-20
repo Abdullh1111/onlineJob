@@ -9,6 +9,7 @@ const page = () => {
       </p>
 
       <TinCertificate
+        name="টিন সাাটিফিকেট"
         label1="TIN  Ticket  Old TIN NID  Passport  Mobile"
         label2="Tin"
         amount={70}

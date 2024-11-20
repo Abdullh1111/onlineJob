@@ -9,7 +9,7 @@ import { FormControl,  FormField,  FormItem, FormLabel, FormMessage } from "../u
 import { Input } from "../ui/input";
 type formItems = {
     label:string,
-    name:string,
+    name?:string,
     form:any
 }
 
@@ -23,10 +23,9 @@ useEffect(() => {
 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[data])
     return (
-        <div>
         <FormField
           control={form.control}
-          name={name}
+          name={label || name || ""}
           render={({ field }) => (
             <FormItem>
           <FormLabel>{label}</FormLabel>
@@ -37,7 +36,6 @@ useEffect(() => {
         </FormItem>
           )}
         />
-        </div>
     );
 };
 

@@ -10,7 +10,7 @@ const page = () => {
       <p className="font-bold text-center flex flex-col mt-10">
         Gp/Bl/Robi/Airtel All
       </p>
-      <NumberForm label="Number"></NumberForm>
+      <NumberForm name="নাম্বার টু আাইডি কাড" label="Number"></NumberForm>
     </div>
   );
 };

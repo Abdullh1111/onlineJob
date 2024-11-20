@@ -13,7 +13,7 @@ const page = () => {
         <span>Banglalink (150 tk)</span>
         <span>Teletalk (150 tk)</span>
       </p>
-      <NumberForm label="Number"></NumberForm>
+      <NumberForm name="কল  লিস্ট" label="Number"></NumberForm>
     </div>
   );
 };
