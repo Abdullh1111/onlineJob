@@ -13,7 +13,11 @@ const createUser = catchAsync(async (req, res) => {
 const login = catchAsync(async (req, res) => {
   const result = res.locals.user;
   const token = result.token();
-  res.cookie("token", token, { httpOnly: true }).status(200).json({
+  res.cookie("token", token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+  }).status(200).json({
     success: true,
     message: "login successfully",
     data: result,
