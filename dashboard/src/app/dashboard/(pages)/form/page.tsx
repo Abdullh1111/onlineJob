@@ -1,25 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client"
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { useGetAllFormsQuery } from '@/redux/services/form';
 import React from 'react';
 
-const page = () => {
-
- const forms =  [
-  {
-    formName: "Contact Form",
-    cost: "$10",
-    process: "Pending",
-  },
-  {
-    formName: "Survey Form",
-    cost: "$20",
-    process: "Finished",
-  },
-  {
-    formName: "Feedback Form",
-    cost: "$15",
-    process: "Pending",
-  },
-];
+const Page = () => {
+  const {data} = useGetAllFormsQuery()
+  console.log(data?.data)
+  let forms = []
+if(data){
+   forms = data?.data
+}
   
       
 
@@ -36,11 +27,11 @@ const page = () => {
     </TableRow>
   </TableHeader>
   <TableBody>
-    {forms.map((form) => (
-        <TableRow key={form.formName}>
+    {forms?.map((form:any,index : number) => (
+        <TableRow key={index}>
             <TableCell className="w-[100px]">{form.formName}</TableCell>
             <TableCell className='lg:flex items-center hidden '>{form.cost}</TableCell>
-            <TableCell className={`text-right ${form.process === "Pending" ? "text-red-500" : "text-green-500"}`}>{form.process}</TableCell>
+            <TableCell className={`text-right ${form.proccess === "pending" ? "text-red-500" : "text-green-500"}`}>{form.proccess}</TableCell>
 
         </TableRow>
     ))}
@@ -51,4 +42,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;

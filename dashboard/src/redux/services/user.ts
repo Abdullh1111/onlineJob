@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { mainUrl } from "@/URL";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
@@ -26,10 +27,17 @@ export const userApi = createApi({
         method: "GET",
       }),
     }),
+
+    logoutUser: builder.query<any, void>({
+      query: () => ({
+        url: "user/logout",
+        method: "GET",
+      }),
+    }),
   
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useLoginUserMutation,  useGetUserQuery} = userApi;
+export const { useLoginUserMutation,  useGetUserQuery, useLazyLogoutUserQuery} = userApi;

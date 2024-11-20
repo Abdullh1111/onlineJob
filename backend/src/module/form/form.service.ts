@@ -19,8 +19,12 @@ const finishedReq = async () => {
 
 const getById = async (id:string) => {
     
-    const result = await formRequest.findById(id);
-    return result;
+    try {
+        const result = await formRequest.findById(id);
+        return result;
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 const getAll = async () => {
@@ -31,7 +35,7 @@ const getAll = async () => {
 
 const update = async (data:TFormRequest) => {
     
-    const result = await formRequest.findByIdAndUpdate(data.id,{data});
+    const result = await formRequest.findByIdAndUpdate(data.id,{...data});
     return result;
 }
 
