@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Login } from '@/components/login';
 import Link from 'next/link';
 import React from 'react';
