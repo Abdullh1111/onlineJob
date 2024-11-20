@@ -13,14 +13,12 @@ export function NumberForm({name,label}:{label:string,name:string}) {
   // ...
   const users = useAppSelector((state) => state.user.user)
 
-  console.log(users)
   // console.log(users)
-  const [submitForm,{data,error,isLoading}] = useFormSubmissionMutation()
+  const [submitForm,{isLoading}] = useFormSubmissionMutation()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onsubmit = (data:any) => {
-    submitForm({formName:name,cost:7,formDetails:data})
+    submitForm({formName:name,cost:7,formDetails:data,userId:users?.id})
   }
-  console.log(data,error)
 const form = useForm()
   return (
     <div className="my-10">
