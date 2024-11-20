@@ -17,6 +17,7 @@ const login = catchAsync(async (req, res) => {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "strict",
+    expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
   }).status(200).json({
     success: true,
     message: "login successfully",
