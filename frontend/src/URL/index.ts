@@ -1,1 +1,1 @@
-export const mainUrl = "http://localhost:4000/api/v1/";
+export const mainUrl = "https://onlinejob-cwp0.onrender.com/api/v1/";
