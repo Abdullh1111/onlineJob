@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { useAllUserQuery } from '@/redux/services/user';
@@ -22,7 +23,7 @@ const Page = () => {
     </TableRow>
   </TableHeader>
   <TableBody>
-    {users?.map((user) => (
+    {users?.map((user:any) => (
         <TableRow key={user.email}>
             <TableCell className="w-[100px]">{user.name}</TableCell>
             <TableCell className='lg:flex hidden'>{user.email}</TableCell>
