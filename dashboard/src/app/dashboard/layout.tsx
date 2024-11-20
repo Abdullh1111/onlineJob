@@ -34,7 +34,7 @@ export default function RootLayout({
       <main className="flex min-h-svh flex-1 flex-col bg-[#F8FAFF] ">
         <SidebarTrigger />
         <div className="lg:ml-20 mx-4 ">
-        {children}
+          {children}
         </div>
       </main>
     </SidebarProvider>

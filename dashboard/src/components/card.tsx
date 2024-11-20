@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {  Check } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -9,49 +10,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import Link from "next/link"
 
 
-type CardProps = React.ComponentProps<typeof Card>
 
-export function CardDemo({ className, ...props }: CardProps) {
-
-  const pendingForms = [
-    {
-      formName: "Registration Form",
-      cost: "$25",
-      process: "Pending",
-    },
-    {
-      formName: "Application Form",
-      cost: "$30",
-      process: "Pending",
-    },
-    {
-      formName: "Subscription Form",
-      cost: "$15",
-      process: "Pending",
-    },
-    {
-      formName: "Registration Form",
-      cost: "$25",
-      process: "Pending",
-    },
-    {
-      formName: "Application Form",
-      cost: "$30",
-      process: "Pending",
-    },
-    {
-      formName: "Subscription Form",
-      cost: "$15",
-      process: "Pending",
-    },
-  ];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function CardDemo({ data,className, ...props }: any) {
+  console.log(data?.data)
+  const pendingForms = data?.data
   
 
   return (
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3 mt-10 mx-auto">
-      {pendingForms.map((form,index) => {
+      {pendingForms?.map((form:any,index:number) => {
         return (
           <Card key={index} className={cn(" w-[300px]", className)} {...props}>
       <CardHeader>
@@ -65,9 +36,9 @@ export function CardDemo({ className, ...props }: CardProps) {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">
+        <Link href={`pending/${form?._id}`}><Button className="w-full">
           <Check /> Read More
-        </Button>
+        </Button></Link>
       </CardFooter>
     </Card>
         )
