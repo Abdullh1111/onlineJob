@@ -28,9 +28,9 @@ const form = useForm({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onsubmit = (datas: any) => {
     submitData(datas)
-    if(!isLoading){
-      redirect("/dashboard")
-    }
+    // if(data){
+    //   redirect("/dashboard")
+    // }
   }
 
   return (
