@@ -1,1 +1,1 @@
-export const mainUrl = "https://onlinejob-cwp0.onrender.com/api/v1/";
+export const mainUrl = "https://onlinejob-fkdh.onrender.com/api/v1/";
