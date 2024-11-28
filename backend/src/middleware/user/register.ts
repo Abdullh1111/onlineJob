@@ -22,8 +22,10 @@ export const loginUserExists = async (req: Request, res: Response, next: NextFun
   if (!comparePass) {
     return next(new appError("password doesn't match", 400));
   }
-  res.locals.user = result
-  next();
+  if(result && comparePass){
+    res.locals.user = result
+    next();
+  }
 };
 
 export default userExists;

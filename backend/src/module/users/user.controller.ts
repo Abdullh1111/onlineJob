@@ -12,7 +12,7 @@ const createUser = catchAsync(async (req, res) => {
 
 const login = catchAsync(async (req, res) => {
   const result = res.locals.user;
-  const token = result.token();
+  const token =await result.token();
   res.status(201).cookie("token", token, {
     httpOnly: true, secure: false, sameSite: "none" ,maxAge: 30*24 * 60 * 60 * 1000,
     partitioned:true
