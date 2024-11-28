@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useLoginUserMutation } from "@/redux/services/user"
-import { redirect } from "next/navigation"
 
 export function Login() {
   
