@@ -14,7 +14,7 @@ const login = catchAsync(async (req, res) => {
   const result = res.locals.user;
   const token = result.token();
   res.cookie("token", token, {
-    httpOnly: true, secure: true, sameSite: "none" ,maxAge: 24 * 60 * 60 * 1000,
+    httpOnly: true, secure: true, sameSite: "none" ,maxAge: 30*24 * 60 * 60 * 1000,
   }).status(200).json({
     success: true,
     message: "login successfully",
