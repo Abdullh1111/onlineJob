@@ -15,10 +15,10 @@ const login = catchAsync(async (req, res) => {
   const token = result.token();
   res.cookie("token", token, {
     httpOnly: true,
-    secure: true,
-    sameSite: "none",
-    domain: "online-job-frontend.vercel.app",
-    expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
+    secure: true,       // Required for HTTPS
+    sameSite: "none",   // Allows cross-origin cookies
+    path: "/",          // Makes the cookie available for all routes
+    expires: new Date(Date.now() + 24 * 60 * 60 * 1000), // 1-day expiration
   }).status(200).json({
     success: true,
     message: "login successfully",
