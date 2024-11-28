@@ -17,7 +17,7 @@ const login = catchAsync(async (req, res) => {
     httpOnly: true,
     secure: true,
     sameSite: "none",
-    partitioned: true,
+    domain: "online-job-frontend.vercel.app",
     expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
   }).status(200).json({
     success: true,
