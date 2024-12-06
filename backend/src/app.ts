@@ -9,7 +9,7 @@ const app = express()
 // middleware
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(cors({origin: ["https://onlinejob-frontend.onrender.com","https://onlinejob-dashboard.onrender.com"],
+app.use(cors({origin: ["https://onlinejob-1.onrender.com","https://onlinejob-2.onrender.com"],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true}))
 app.use(cookieParser())
